@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Pedidos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Pedidos</h1>
+        <a href="/criar" class="button">Criar Novo Pedido</a>
+        <ul>
+            <% if (Array.isArray(pedidos) && pedidos.length > 0) { %>
+                <% pedidos.forEach(pedido => { %>
+                    <li>
+                        <strong>Nome:</strong> <%= pedido.nome || "N/A" %> <br>
+                        
+                        <!-- Verificação para carnes -->
+                        <p>Carnes: 
+                            <%= Array.isArray(pedido.carnes) ? pedido.carnes.join(", ") : "N/A" %>
+                        </p>
+                        
+                        <!-- Verificação para acompanhamentos -->
+                        <p>Acompanhamentos: 
+                            <%= Array.isArray(pedido.acompanhamentos) ? pedido.acompanhamentos.join(", ") : "N/A" %>
+                        </p>
+                        
+                        <!-- Exibição de arroz e feijão -->
+                        <p>Arroz: <%= pedido.arroz || "N/A" %> | Feijão: <%= pedido.feijao || "N/A" %></p>
+                        
+                        <!-- Botão para deletar -->
+                        <form action="/deletar/<%= pedido._id %>" method="POST" style="display: inline;">
+                            <button type="submit" class="delete-button">Deletar</button>
+                        </form>
+                    </li>
+                <% }); %>
+            <% } else { %>
+                <p>Nenhum pedido encontrado.</p>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>

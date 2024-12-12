@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="deletar.css">
+    <title>Deletar Pedido</title>
+</head>
+<body>
+    <h1>Deletar Pedido</h1>
+    <p>Tem certeza de que deseja deletar o pedido de "<%= pedido.nome %>"?</p>
+    <form action="/deletarpedido/<%= pedido._id %>" method="POST">
+        <button type="submit">Sim, deletar</button>
+        <a href="/pedidos">Cancelar</a>
+    </form>
+</body>
+</html>

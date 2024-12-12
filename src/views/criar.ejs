@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="criar.css">
+    <title>Criar Pedido</title>
+</head>
+<body>
+    <h1>Criar Novo Pedido</h1>
+    <form action="/criar" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
+        
+        <label for="carnes">Carnes (separadas por vírgula):</label>
+        <input type="text" name="carnes" id="carnes" required>
+        
+        <label for="acompanhamentos">Acompanhamentos (separados por vírgula):</label>
+        <input type="text" name="acompanhamentos" id="acompanhamentos" required>
+        
+        <label for="arroz">Arroz:</label>
+        <input type="text" name="arroz" id="arroz" required>
+        
+        <label for="feijao">Feijão:</label>
+        <input type="text" name="feijao" id="feijao" required>
+        
+        <button type="submit">Criar</button>
+    </form>
+</body>
+</html>
